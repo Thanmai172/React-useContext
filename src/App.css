@@ -1,38 +1,194 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/* Header Styles */
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Footer Styles */
+.App-footer {
+  background-color: #282c34;
+  color: white;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.App-footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Main Content Layout */
+main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Product List Styles */
+.product-list {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-item p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.product-item button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.product-item button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Cart Styles */
+.cart {
+  flex: 1;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.cart-item p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.cart-item button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item button:hover {
+  background-color: #b02a37;
+}
+
+/* Add Button for "Clear All Items" */
+.clear-cart-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-cart-btn:hover {
+  background-color: #e68a00;
+}
+
+/* Cart Totals */
+.cart h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .product-item,
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .product-item button,
+  .cart-item button {
+    width: 100%;
+    text-align: center;
   }
 }
